@@ -1,0 +1,78 @@
+{
+  "lastUserId": 1,
+  "tarefas": [
+    {
+      "id": "acd4",
+      "titulo": "Fazer o trabalho de TIAW",
+      "data": "2025-06-01",
+      "hora": "12:00",
+      "prioridade": "Muito alta",
+      "descricao": "",
+      "realizada": false,
+      "recorrencia": "Mensal",
+      "exp": 0.5,
+      "sequencia": 999,
+      "userId": "user123"
+    },
+    {
+      "id": "bdf2",
+      "titulo": "Trabalho de TIAW",
+      "data": "2025-06-13",
+      "hora": "00:00",
+      "prioridade": "Alta",
+      "descricao": "hahahaha",
+      "realizada": false,
+      "recorrencia": "Não repete",
+      "exp": 0.5,
+      "sequencia": 0,
+      "userId": "user456"
+    },
+    {
+      "id": "9821",
+      "titulo": "teste",
+      "data": "2025-06-02",
+      "hora": "08:00:00",
+      "prioridade": "Média",
+      "descricao": "teste",
+      "realizada": true,
+      "recorrencia": "Não repete",
+      "exp": 0.5,
+      "sequencia": 0,
+      "userId": "user123"
+    }
+  ],
+  "users": [
+    {
+      "id": "user123",
+      "senha": "",
+      "name": "Admin-Teste",
+      "profilePic": "img/man2.png",
+      "xp": 0,
+      "level": 100
+    },
+    {
+      "id": "user456",
+      "senha": "",
+      "name": "Outro Usuário",
+      "profilePic": "img/woman.png",
+      "xp": 150,
+      "level": 2
+    },
+    {
+      "id": "user1750278111088",
+      "senha": "Mateus",
+      "name": "Mateus",
+      "profilePic": "img/man.png",
+      "xp": 0,
+      "level": 1
+    },
+    {
+      "id": "user1750285691582",
+      "senha": "pantaloreza",
+      "name": "bababoi",
+      "profilePic": "img/man.png",
+      "xp": 0,
+      "level": 1
+    }
+  ]
+}

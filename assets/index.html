@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Time Works</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userId = localStorage.getItem('currentUserId');
+            if (!userId) {
+                window.location.href = 'login.html'; 
+            }
+        });
+    </script>
+</head>
+
+<body class="d-flex flex-column vh-100 m-0 ">
+
+    <header class="d-flex text-white p-2 align-items-center ">
+        <button class="openmodal"> <img src="img/man.png" alt="opnmodal" class="openmodalimg"> </button>
+        <div class="d-flex">
+            <img src="img/logo.png">
+        </div>
+
+        <nav class="d-flex gap-2 h-100">
+            <button class="text-white" id="voltar">&lt;</button>
+            <p id="mesAtual"></p>
+            <button class="text-white" id="avancar">&gt;</button>
+            <button class="text-white " id="hoje">Hoje</button>
+        </nav>
+
+        <div class="d-flex flex-column gap-1 ms-1 h-100">
+            <button class="text-white" id="botaoCalendarioMes">Mês</button>
+            <button class="text-white" id="botaoCalendarioSemanal">Semana</button>
+            <button class="text-white" id="botaoCalendarioDia">Dia</button>
+        </div>
+
+    </header>
+
+    <div class="flex-grow-1 d-flex">
+
+        <aside class="p-3">
+            <div style="height: 40%;" id="sequenciaTarefas"></div>
+
+            <div class="p-2 my-2 rounded text-white">
+                Tarefas com prioridade: "Muito alta"
+            </div>
+        </aside>
+
+        <main class="d-flex flex-grow-1 p-2 m-2 rounded flex-column">
+
+            <div>
+                <div id="cabecalhoCalendario"></div>
+            </div>
+
+            <div id="canvaCalendario"></div>
+
+        </main>
+
+    </div>
+
+    <dialog>
+        <div id="alinharbotaoclose">
+            <button class="buttonclose"><img src="img/close50px.png" alt="closebtn" class="btnc"></button>
+        </div>
+
+
+        <div id="menu">
+            <div class="imgperfildiv">
+                <img src="img/man.png" alt="imagem de perfil" class="imgperfil">
+                <button id="edit-profile-btn">
+                    <img src="img/edit.jpeg" alt="Editar Perfil" class="edit-btn-img">
+                </button>
+            </div>
+
+            <div class="menutxt">
+                <div class="user-info-line"> <span class="username">Usuário-teste</span><span class="separator"> •
+                    </span>
+                    <span class="userid">#00000</span><span class="separator"> • </span>
+                    <span id="userlevel">Nível: 0</span><span class="separator"> • </span>
+                    <span class="userxp">XP: 0</span>
+                </div>
+                <div class="xpbarimage">
+                    <img src="img/xp0.png" alt="xpbar" class="xpbarclass">
+                    <p class="xpbartext">0%</p>
+                </div>
+            </div>
+        </div>
+
+
+        <aside>
+            <div class="card-container" id="conquistas-container">
+            </div>
+        </aside>
+
+        <div id="edit-modal" class="edit-modal">
+            <div class="edit-modal-content">
+                <span class="close-edit-modal"><img src="img/close25px.png" alt="Fecha Página de edição"></span>
+                <h2>Editar Perfil</h2>
+
+                <div class="form-group">
+                    <label for="username-input">Nome de Usuário:</label>
+                    <input type="text" id="username-input" class="edit-input">
+                </div>
+
+                <div class="form-group">
+                    <label>Escolha sua foto de perfil:</label>
+                    <div class="profile-pic-options">
+                        <img src="img/man.png" class="profile-option" data-value="img/man.png">
+                        <img src="img/woman.png" class="profile-option" data-value="img/woman.png">
+                        <img src="img/man2.png" class="profile-option" data-value="img/man2.png">
+                    </div>
+                </div>
+
+                <button id="save-changes-btn">Salvar Alterações</button>
+            </div>
+        </div>
+
+    </dialog>
+
+    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/sequencia.js"></script>
+    <script src="js/perfil.js"></script>
+</body>
+
+</html>

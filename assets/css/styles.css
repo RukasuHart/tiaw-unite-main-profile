@@ -1,0 +1,647 @@
+/* Formatações gerais */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: #150A35;
+}
+
+/* Cabeçalho */
+
+header img {
+    width: 50%;
+}
+
+
+nav button {
+    border-radius: 15px;
+    font-size: 50px;
+    background-color: transparent;
+    border: 0;
+}
+
+#hoje {
+    background-color: #1E0E45;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 100%;
+
+}
+
+nav button:nth-last-child(1) {
+    border-radius: 15px;
+    font-size: 30px;
+    padding: 15px;
+}
+
+nav p {
+    width: 100px;
+    text-align: center;
+    margin: auto;
+    font-size: larger;
+}
+
+.esconderBotao {
+    display: none;
+}
+
+#botaoCalendarioMes {
+    background-color: #1E0E45;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 50px;
+}
+
+#botaoCalendarioSemanal {
+    background-color: #1E0E45;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 50px;
+}
+
+#botaoCalendarioDia {
+    background-color: #1E0E45;
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 50px;
+}
+
+/* Corpo/Conteúdo principal */
+
+
+main {
+    background-color: #1E0E45;
+}
+
+#canvaCalendario {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+.cardDiaCalendario {
+    background-color: whitesmoke;
+    padding: 5px;
+    border: solid 0.1rem #150A35;
+    text-align: center;
+    color: black;
+    border-top: none;
+}
+
+#cabecalhoCalendario {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: min-content;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow: hidden;
+}
+
+.cardCabecalhoCalendario {
+    background-color: whitesmoke;
+    border-top: solid 0.1rem #150A35;
+    border-left: solid 0.1rem #150A35;
+    border-right: solid 0.1rem #150A35;
+    text-align: center;
+    color: black;
+    font-size: small;
+}
+
+/* Barra lateral */
+
+aside {
+    width: 20%;
+}
+
+aside div {
+    background-color: #1E0E45;
+}
+
+.celula-hora {
+    border: 1px solid #eaeaea;
+    min-height: 30px;
+    position: relative;
+}
+
+.indicador-hora {
+    font-size: 0.8rem;
+    color: #666;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.cabecalho-dia {
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+
+.visualizacao-diaria {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto repeat(24, minmax(0, 1fr));
+    overflow: hidden !important;
+    background-color: whitesmoke;
+}
+
+.cabecalho-dia-diario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: whitesmoke;
+    border-left: solid 0.1rem #150A35;
+    border-right: solid 0.1rem #150A35;
+
+}
+
+.nome-dia-diario {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.numero-dia-diario {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.celula-hora-diaria {
+    border-left: solid 0.1rem #150A35;
+    border-right: solid 0.1rem #150A35;
+    border-bottom: dotted 0.1rem #150A35;
+    background-color: whitesmoke;
+    padding: 2px 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.indicador-hora-diaria {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: normal;
+}
+
+
+.hora-atual {
+    background-color: #e6e6ff !important;
+    border-left: 2px solid #150A35 !important;
+    border-right: 2px solid #150A35 !important;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    border-radius: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/*Botão de abrir pddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddopup*/
+
+/*Botão de abrir popup*/
+.openmodal {
+    background: none;
+    border: none;
+}
+
+.openmodal .openmodalimg {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.openmodal:hover {
+    scale: 1.15;
+    transition: 0.2s;
+}
+
+dialog {
+    width: 50%;
+    height: 50%;
+    border: none;
+    border-radius: 12px;
+    padding: 20px 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* Edita a área de informações do usuário */
+.menutxt {
+    display: flex;
+    flex-direction: column;
+    /* Keep as column to stack the info line and xp bar */
+    align-items: center;
+    /* Center items horizontally within menutxt */
+    gap: 10px;
+    margin-top: 5px !important;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    text-align: center;
+    /* Center overall text within the menutxt div */
+    padding: 15px;
+}
+
+.user-info-line {
+    /* New style for the single line of user info */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center the entire line horizontally */
+    flex-wrap: wrap;
+    /* Allow wrapping on very small screens if needed */
+    gap: 8px;
+    /* Space between each info segment including the separator */
+    font-size: 18px;
+    /* A default size for all text in this line */
+    color: black;
+    white-space: nowrap;
+    /* Prevent line breaks within the info line */
+}
+
+.separator {
+    color: black; /* Ensure separator color is visible */
+    font-size: 18px;
+    margin: 0 2px; /* Small horizontal margin for the bullet */
+}
+
+/* Edita o botão de fechar */
+#alinharbotaoclose {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    position: absolute;
+    top: -10px;
+    right: 0px;
+}
+
+.imgperfil {
+    width: 150px;
+    height: 100%;
+}
+
+.imgperfildiv {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: gray 0px 30px 0px;
+}
+
+
+.username {
+    font-size: 20px;
+    /* Slightly larger for username */
+    color: black;
+    margin: 0;
+    /* Remove previous margins */
+}
+
+.userid,
+#userlevel,
+.userxp {
+    font-size: 18px;
+    /* Consistent font size for ID, Level, XP */
+    color: black;
+    margin: 0;
+    /* Remove previous margins */
+}
+
+/*Edita o botão X que fecha o popup da página de perfil*/
+.buttonclose {
+    max-width: 10px;
+    background: none;
+    border: none;
+}
+
+/*Edita especificamente a imagem X e suas propriedades*/
+.buttonclose .btnc {
+    width: 15px;
+    background-color: transparent;
+}
+
+.buttonclose:hover {
+    scale: 1.15;
+    transition: 0.2s;
+}
+
+.userid,
+.username,
+#userlevel {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.edit-modal-content {
+    text-align: center;
+
+}
+
+.edit-input {
+    text-align: center;
+}
+
+
+.xpbarimage {
+    display: inline-flex;
+    width: 150px;
+    margin-top: 20px;
+    position: relative;
+    left: 0;
+}
+
+.xpbartext {
+    position: absolute;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.xpbarclass {
+    width: 150px;
+
+}
+
+.card-heading,
+.card-body {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.card-body {
+    font-size: 10px;
+}
+
+.card-heading {
+    font-size: 11px;
+}
+
+.card {
+    width: 180px;
+    height: 40px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: gray;
+    transition: all 0.3s ease;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 8px;
+    align-items: center;
+}
+
+.card:hover {
+    background: rgb(110, 110, 110);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-image {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #9a639a;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.card-container {
+    position: absolute;
+    bottom: 0%;
+    right: 8%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-height: 180px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+/* Edita o botão de lápis que abre a caixa de editar o perfil */
+.profile-edit {
+    position: absolute;
+    bottom: 70px;
+    z-index: 10;
+    left: 20px;
+}
+
+/* Edita a posição do botão de edição */
+#edit-profile-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#edit-profile-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Edita a imagem do botão de edição */
+.edit-btn-img {
+    width: 45px;
+    height: auto;
+    border-radius: 100%;
+}
+
+/* Edita do popup de edição */
+.edit-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Edita o que está dentro do modal de edição */
+.edit-modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+
+/* Edita do botão de fechar o popup */
+.close-edit-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close-edit-modal:hover {
+    scale: 1.15;
+    transition: 0.4s;
+}
+
+/* Edita dos grupos de formulário no popup */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Edita dos campos de entrada no modal */
+.edit-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Edita o botão de salvar alterações */
+#save-changes-btn {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.4s;
+}
+
+#save-changes-btn:hover {
+    scale: 1.05;
+    background-color: rgb(110, 110, 110);
+}
+
+/* Edita as opções de imagem de perfil */
+.profile-pic-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.profile-option {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    object-fit: cover;
+}
+
+
+.profile-option:hover {
+    transform: scale(1.1);
+}
+
+/* Edita os efeitos de imagem de perfil selecionada */
+.profile-option.selected {
+    border-color: #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.imgperfildiv {
+    width: 150px;
+    height: 150px;
+}
+
+
+/* Botão posicionado sob a imagem, levemente à direita */
+#edit-profile-btn {
+    position: absolute;
+    bottom: -12px;
+    left: 70%;
+    border-radius: 50%;
+    width: 35%;
+    height: 35%;
+    padding: 4px;
+    z-index: 5;
+    cursor: pointer;
+}
+
+/* Ícone do lápis */
+.edit-btn-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* Cabeçalho de Login */
+.login-header {
+    background-color: #1E0E45;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header img {
+    max-height: 80px; /* Ajuste o tamanho da logo conforme necessário */
+    width: auto;
+}
